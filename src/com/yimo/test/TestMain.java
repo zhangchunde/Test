@@ -14,7 +14,9 @@ public class TestMain {
 
 //        computeHash(16);
 
-        computeHashLong(16);
+//        computeHashLong(16);
+
+        testInt();
 
     }
 
@@ -39,6 +41,20 @@ public class TestMain {
 //        int result = (int)((Math.sqrt(5) - 1) * (1L<<31));
         double d = (Math.sqrt(5) - 1) / 2;
         System.out.println((int)(d * (1L << 32)));
+    }
+
+    public static void testInt(){
+        int i = 1 << 33;
+        print(-1);
+        print(i);
+        print(i/2);
+    }
+
+    public static void print(int num){
+        for(int i=31;i>=0;i--){
+            System.out.print((num & 1 << i) == 0 ? "0":"1");
+        }
+        System.out.println();
     }
 
 }
